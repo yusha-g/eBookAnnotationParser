@@ -1,0 +1,64 @@
+# pyproject.toml
+
+[build-system]
+requires = ["setuptools>=75.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "annotation-parser"
+version = "0.1.0"
+description = "Convert Kindle My Clippings.txt exports into structured Markdown files for Notion."
+readme = "README.md"
+requires-python = ">=3.12"
+
+authors = [
+    {name = "Pratyusha Ghosh", email = "pratyusha.gh@gmail.com"}
+]
+
+keywords = [
+    "kindle",
+    "annotations",
+    "markdown",
+    "notion",
+    "ebook",
+    "parser",
+]
+
+dependencies = []
+
+[project.optional-dependencies]
+dev = [
+    "black>=24.0.0",
+    "pytest>=8.0.0",
+    "ruff>=0.7.0",
+]
+
+[project.scripts]
+annotation-parser = "annotation_parser.main:main"
+
+[tool.setuptools]
+package-dir = { "" = "src" }
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.black]
+line-length = 88
+target-version = ["py312"]
+
+[tool.ruff]
+line-length = 88
+target-version = "py312"
+
+[tool.ruff.lint]
+select = [
+    "E",
+    "F",
+    "I",
+    "B",
+    "UP",
+]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]
