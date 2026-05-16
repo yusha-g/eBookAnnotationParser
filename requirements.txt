@@ -1,0 +1,11 @@
+# Core runtime dependencies
+pandas>=2.2.0
+numpy>=2.0.0
+
+# Development / tooling
+black>=24.10.0
+ruff>=0.14.0
+mypy==1.11.1
+pre-commit>=3.0.0
+
+pandas-stubs>=2.2.0
