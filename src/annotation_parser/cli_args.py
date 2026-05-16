@@ -35,3 +35,13 @@ def validate_args(args: argparse.Namespace) -> None:
 
     if not args.output.exists():
         args.output.mkdir(parents=True, exist_ok=True)
+
+
+def build_parser() -> argparse.Namespace:
+    cli_args = parse_args().parse_args()
+    validate_args(cli_args)
+
+    print("Configuration:")
+    print(f"Input: {cli_args.input}")
+    print(f"Output: {cli_args.output}")
+    return cli_args
