@@ -3,9 +3,11 @@ from datetime import datetime
 from enum import Enum
 from hashlib import md5
 
+
 class AnnotationType(str, Enum):
     HIGHLIGHT = "Highlight"
     NOTE = "Note"
+
 
 @dataclass
 class Annotation:
@@ -23,10 +25,12 @@ class Annotation:
 
     associated_note: str | None = None
 
+
 @dataclass
 class Series:
     name: str
     number: int
+
 
 @dataclass
 class Book:
@@ -40,11 +44,9 @@ class Book:
     def add_annotation(self, annotation: Annotation) -> None:
         self.annotations.append(annotation)
 
-    
     def generate_id(self) -> str:
         normalise = (
-            f"{self.title.strip().lower()}::"
-            f"{(self.author or '').strip().lower()}"
+            f"{self.title.strip().lower()}::{(self.author or '').strip().lower()}"
         )
 
         return md5(normalise.encode("utf-8")).hexdigest()

@@ -7,9 +7,9 @@ Tuesday, 7 February 2023 14:23:37
 location 3336-3336
 
 > A touch of the hand and this burning would, on the instant, beautifully reverse itself.
-> 
+>
 
-Didn't Understand the meaning 
+Didn't Understand the meaning
 
 ---
 

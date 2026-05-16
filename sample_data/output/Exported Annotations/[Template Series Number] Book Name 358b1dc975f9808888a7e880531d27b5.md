@@ -11,7 +11,7 @@ DayofWeek, Date Month Year HH:MM:SS
 location <start_loc>-<end_loc>
 
 > <highlighted-quote>
-> 
+>
 
 associated note
 
@@ -24,7 +24,7 @@ DayofWeek, Date Month Year HH:MM:SS
 location <start_loc>-<end_loc>
 
 > <highlighted-quote>
-> 
+>
 
 associated note
 
