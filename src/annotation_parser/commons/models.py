@@ -7,7 +7,7 @@ from hashlib import md5
 class AnnotationType(str, Enum):
     HIGHLIGHT = "Highlight"
     NOTE = "Note"
-
+    BOOKMARK = "Bookmark"
 
 @dataclass
 class Annotation:
@@ -17,8 +17,8 @@ class Annotation:
 
     created_at: datetime
 
-    location_start: int
-    location_end: int
+    location_start: int | None = None
+    location_end: int | None = None
 
     page_start: int | None = None
     page_end: int | None = None
@@ -31,12 +31,13 @@ class Series:
     name: str
     number: int
 
-
 @dataclass
 class Book:
     title: str
     author: str
-    annotations: list[Annotation]
+    annotations: list[Annotation] = field(
+        default_factory=list
+    )
     series: Series | None = None
 
     id: str = field(init=False)
