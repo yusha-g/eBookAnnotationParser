@@ -40,8 +40,4 @@ def validate_args(args: argparse.Namespace) -> None:
 def build_parser() -> argparse.Namespace:
     cli_args = parse_args().parse_args()
     validate_args(cli_args)
-
-    print("Configuration:")
-    print(f"Input: {cli_args.input}")
-    print(f"Output: {cli_args.output}")
     return cli_args
